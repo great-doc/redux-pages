@@ -1,0 +1,1352 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Server Rendering · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="WritingTests.html" />
+    
+    
+    <link rel="prev" href="ReducingBoilerplate.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Read Me
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../introduction/">
+            
+                <a href="../introduction/">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../introduction/Motivation.html">
+            
+                <a href="../introduction/Motivation.html">
+            
+                    
+                    Motivation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../introduction/CoreConcepts.html">
+            
+                <a href="../introduction/CoreConcepts.html">
+            
+                    
+                    Core Concepts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../introduction/ThreePrinciples.html">
+            
+                <a href="../introduction/ThreePrinciples.html">
+            
+                    
+                    Three Principles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../introduction/PriorArt.html">
+            
+                <a href="../introduction/PriorArt.html">
+            
+                    
+                    Prior Art
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../introduction/Ecosystem.html">
+            
+                <a href="../introduction/Ecosystem.html">
+            
+                    
+                    Ecosystem
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../introduction/Examples.html">
+            
+                <a href="../introduction/Examples.html">
+            
+                    
+                    Examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../basics/">
+            
+                <a href="../basics/">
+            
+                    
+                    Basics
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../basics/Actions.html">
+            
+                <a href="../basics/Actions.html">
+            
+                    
+                    Actions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../basics/Reducers.html">
+            
+                <a href="../basics/Reducers.html">
+            
+                    
+                    Reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../basics/Store.html">
+            
+                <a href="../basics/Store.html">
+            
+                    
+                    Store
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../basics/DataFlow.html">
+            
+                <a href="../basics/DataFlow.html">
+            
+                    
+                    Data Flow
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../basics/UsageWithReact.html">
+            
+                <a href="../basics/UsageWithReact.html">
+            
+                    
+                    Usage with React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../basics/ExampleTodoList.html">
+            
+                <a href="../basics/ExampleTodoList.html">
+            
+                    
+                    Example: Todo List
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../advanced/">
+            
+                <a href="../advanced/">
+            
+                    
+                    Advanced
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../advanced/AsyncActions.html">
+            
+                <a href="../advanced/AsyncActions.html">
+            
+                    
+                    Async Actions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../advanced/AsyncFlow.html">
+            
+                <a href="../advanced/AsyncFlow.html">
+            
+                    
+                    Async Flow
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../advanced/Middleware.html">
+            
+                <a href="../advanced/Middleware.html">
+            
+                    
+                    Middleware
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../advanced/UsageWithReactRouter.html">
+            
+                <a href="../advanced/UsageWithReactRouter.html">
+            
+                    
+                    Usage with React Router
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../advanced/ExampleRedditAPI.html">
+            
+                <a href="../advanced/ExampleRedditAPI.html">
+            
+                    
+                    Example: Reddit API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" >
+            
+                <span>
+            
+                    
+                    Next Steps
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Recipes
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="MigratingToRedux.html">
+            
+                <a href="MigratingToRedux.html">
+            
+                    
+                    Migrating to Redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="UsingObjectSpreadOperator.html">
+            
+                <a href="UsingObjectSpreadOperator.html">
+            
+                    
+                    Using Object Spread Operator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="ReducingBoilerplate.html">
+            
+                <a href="ReducingBoilerplate.html">
+            
+                    
+                    Reducing Boilerplate
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.4" data-path="ServerRendering.html">
+            
+                <a href="ServerRendering.html">
+            
+                    
+                    Server Rendering
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="WritingTests.html">
+            
+                <a href="WritingTests.html">
+            
+                    
+                    Writing Tests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="ComputingDerivedData.html">
+            
+                <a href="ComputingDerivedData.html">
+            
+                    
+                    Computing Derived Data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="ImplementingUndoHistory.html">
+            
+                <a href="ImplementingUndoHistory.html">
+            
+                    
+                    Implementing Undo History
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="IsolatingSubapps.html">
+            
+                <a href="IsolatingSubapps.html">
+            
+                    
+                    Isolating Subapps
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="StructuringReducers.html">
+            
+                <a href="StructuringReducers.html">
+            
+                    
+                    Structuring Reducers
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.9.1" data-path="reducers/PrerequisiteConcepts.html">
+            
+                <a href="reducers/PrerequisiteConcepts.html">
+            
+                    
+                    Prerequisite Concepts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.2" data-path="reducers/BasicReducerStructure.html">
+            
+                <a href="reducers/BasicReducerStructure.html">
+            
+                    
+                    Basic Reducer Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.3" data-path="reducers/SplittingReducerLogic.html">
+            
+                <a href="reducers/SplittingReducerLogic.html">
+            
+                    
+                    Splitting Reducer Logic
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.4" data-path="reducers/RefactoringReducersExample.html">
+            
+                <a href="reducers/RefactoringReducersExample.html">
+            
+                    
+                    Refactoring Reducers Example
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.5" data-path="reducers/UsingCombineReducers.html">
+            
+                <a href="reducers/UsingCombineReducers.html">
+            
+                    
+                    Using combineReducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.6" data-path="reducers/BeyondCombineReducers.html">
+            
+                <a href="reducers/BeyondCombineReducers.html">
+            
+                    
+                    Beyond combineReducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.7" data-path="reducers/NormalizingStateShape.html">
+            
+                <a href="reducers/NormalizingStateShape.html">
+            
+                    
+                    Normalizing State Shape
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.8" data-path="reducers/UpdatingNormalizedData.html">
+            
+                <a href="reducers/UpdatingNormalizedData.html">
+            
+                    
+                    Updating Normalized Data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.9" data-path="reducers/ReusingReducerLogic.html">
+            
+                <a href="reducers/ReusingReducerLogic.html">
+            
+                    
+                    Reusing Reducer Logic
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.10" data-path="reducers/ImmutableUpdatePatterns.html">
+            
+                <a href="reducers/ImmutableUpdatePatterns.html">
+            
+                    
+                    Immutable Update Patterns
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.11" data-path="reducers/InitializingState.html">
+            
+                <a href="reducers/InitializingState.html">
+            
+                    
+                    Initializing State
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="UsingImmutableJS.html">
+            
+                <a href="UsingImmutableJS.html">
+            
+                    
+                    Using Immutable.JS with Redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../FAQ.html">
+            
+                <a href="../FAQ.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../faq/General.html">
+            
+                <a href="../faq/General.html">
+            
+                    
+                    General
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../faq/Reducers.html">
+            
+                <a href="../faq/Reducers.html">
+            
+                    
+                    Reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../faq/OrganizingState.html">
+            
+                <a href="../faq/OrganizingState.html">
+            
+                    
+                    Organizing State
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../faq/StoreSetup.html">
+            
+                <a href="../faq/StoreSetup.html">
+            
+                    
+                    Store Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../faq/Actions.html">
+            
+                <a href="../faq/Actions.html">
+            
+                    
+                    Actions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../faq/ImmutableData.html">
+            
+                <a href="../faq/ImmutableData.html">
+            
+                    
+                    Immutable Data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../faq/CodeStructure.html">
+            
+                <a href="../faq/CodeStructure.html">
+            
+                    
+                    Code Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../faq/Performance.html">
+            
+                <a href="../faq/Performance.html">
+            
+                    
+                    Performance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../faq/ReactRedux.html">
+            
+                <a href="../faq/ReactRedux.html">
+            
+                    
+                    React Redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="../faq/Miscellaneous.html">
+            
+                <a href="../faq/Miscellaneous.html">
+            
+                    
+                    Miscellaneous
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../Troubleshooting.html">
+            
+                <a href="../Troubleshooting.html">
+            
+                    
+                    Troubleshooting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../Glossary.html">
+            
+                <a href="../Glossary.html">
+            
+                    
+                    Glossary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../api/">
+            
+                <a href="../api/">
+            
+                    
+                    API Reference
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../api/createStore.html">
+            
+                <a href="../api/createStore.html">
+            
+                    
+                    createStore
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../api/Store.html">
+            
+                <a href="../api/Store.html">
+            
+                    
+                    Store
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../api/combineReducers.html">
+            
+                <a href="../api/combineReducers.html">
+            
+                    
+                    combineReducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../api/applyMiddleware.html">
+            
+                <a href="../api/applyMiddleware.html">
+            
+                    
+                    applyMiddleware
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../api/bindActionCreators.html">
+            
+                <a href="../api/bindActionCreators.html">
+            
+                    
+                    bindActionCreators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="../api/compose.html">
+            
+                <a href="../api/compose.html">
+            
+                    
+                    compose
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../CHANGELOG.md">
+            
+                <span>
+            
+                    
+                    Change Log
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../PATRONS.md">
+            
+                <span>
+            
+                    
+                    Patrons
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../Feedback.html">
+            
+                <a href="../Feedback.html">
+            
+                    
+                    Feedback
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Server Rendering</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="server-rendering">Server Rendering</h1>
+<p>The most common use case for server-side rendering is to handle the <em>initial render</em> when a user (or search engine crawler) first requests our app.  When the server receives the request, it renders the required component(s) into an HTML string, and then sends it as a response to the client.  From that point on, the client takes over rendering duties.</p>
+<p>We will use React in the examples below, but the same techniques can be used with other view frameworks that can render on the server.</p>
+<h3 id="redux-on-the-server">Redux on the Server</h3>
+<p>When using Redux with server rendering, we must also send the <a href="../Glossary.html#state" class="glossary-term" title="">state</a> of our app along in our response, so the client can use it as the initial <a href="../Glossary.html#state" class="glossary-term" title="">state</a>. This is important because, if we preload any data before generating the HTML, we want the client to also have access to this data. Otherwise, the markup generated on the client won&apos;t match the server markup, and the client would have to load the data again.</p>
+<p>To send the data down to the client, we need to:</p>
+<ul>
+<li>create a fresh, new Redux <a href="../Glossary.html#store" class="glossary-term" title="">store</a> instance on every request;</li>
+<li>optionally dispatch some actions;</li>
+<li>pull the <a href="../Glossary.html#state" class="glossary-term" title="">state</a> out of <a href="../Glossary.html#store" class="glossary-term" title="">store</a>;</li>
+<li>and then pass the <a href="../Glossary.html#state" class="glossary-term" title="">state</a> along to the client.</li>
+</ul>
+<p>On the client side, a new Redux <a href="../Glossary.html#store" class="glossary-term" title="">store</a> will be created and initialized with the <a href="../Glossary.html#state" class="glossary-term" title="">state</a> provided from the server.<br>Redux&apos;s <strong><em>only</em></strong> job on the server side is to provide the <strong>initial <a href="../Glossary.html#state" class="glossary-term" title="">state</a></strong> of our app.</p>
+<h2 id="setting-up">Setting Up</h2>
+<p>In the following recipe, we are going to look at how to set up server-side rendering. We&apos;ll use the simplistic <a href="https://github.com/reactjs/redux/tree/master/examples/counter" target="_blank">Counter app</a> as a guide and show how the server can render <a href="../Glossary.html#state" class="glossary-term" title="">state</a> ahead of time based on the request.</p>
+<h3 id="install-packages">Install Packages</h3>
+<p>For this example, we&apos;ll be using <a href="http://expressjs.com/" target="_blank">Express</a> as a simple web server. We also need to install the React bindings for Redux, since they are not included in Redux by default.</p>
+<pre><code>npm install --save express react-redux
+</code></pre><h2 id="the-server-side">The Server Side</h2>
+<p>The following is the outline for what our server side is going to look like. We are going to set up an <a href="http://expressjs.com/guide/using-middleware.html" target="_blank">Express middleware</a> using <a href="http://expressjs.com/api.html#app.use" target="_blank">app.use</a> to handle all requests that come in to our server. If you&apos;re unfamiliar with Express or <a href="../Glossary.html#middleware" class="glossary-term" title="">middleware</a>, just know that our handleRender function will be called every time the server receives a request.</p>
+<p>Additionally, as we are using ES6 and JSX syntax, we will need to compile with <a href="https://babeljs.io/" target="_blank">Babel</a> (see <a href="https://github.com/babel/example-node-server" target="_blank">this example of a Node Server with Babel</a>) and the <a href="https://babeljs.io/docs/plugins/preset-react/" target="_blank">React preset</a>.</p>
+<h5 id="serverjs"><code>server.js</code></h5>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> path <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;path&apos;</span>
+<span class="hljs-keyword">import</span> Express <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;express&apos;</span>
+<span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>
+<span class="hljs-keyword">import</span> { createStore } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;redux&apos;</span>
+<span class="hljs-keyword">import</span> { Provider } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-redux&apos;</span>
+<span class="hljs-keyword">import</span> counterApp <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./reducers&apos;</span>
+<span class="hljs-keyword">import</span> App <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./containers/App&apos;</span>
+
+<span class="hljs-keyword">const</span> app = Express()
+<span class="hljs-keyword">const</span> port = <span class="hljs-number">3000</span>
+
+<span class="hljs-comment">//Serve static files</span>
+app.use(<span class="hljs-string">&apos;/static&apos;</span>, Express.static(<span class="hljs-string">&apos;static&apos;</span>));
+
+<span class="hljs-comment">// This is fired every time the server side receives a request</span>
+app.use(handleRender)
+
+<span class="hljs-comment">// We are going to fill these out in the sections to follow</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handleRender</span>(<span class="hljs-params">req, res</span>) </span>{ <span class="hljs-comment">/* ... */</span> }
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">renderFullPage</span>(<span class="hljs-params">html, preloadedState</span>) </span>{ <span class="hljs-comment">/* ... */</span> }
+
+app.listen(port)
+</code></pre>
+<h3 id="handling-the-request">Handling the Request</h3>
+<p>The first thing that we need to do on every request is create a new Redux <a href="../Glossary.html#store" class="glossary-term" title="">store</a> instance. The only purpose of this <a href="../Glossary.html#store" class="glossary-term" title="">store</a> instance is to provide the initial <a href="../Glossary.html#state" class="glossary-term" title="">state</a> of our application.</p>
+<p>When rendering, we will wrap <code>&lt;App /&gt;</code>, our root component, inside a <code>&lt;Provider&gt;</code> to make the <a href="../Glossary.html#store" class="glossary-term" title="">store</a> available to all components in the component tree, as we saw in <a href="../basics/UsageWithReact.html">Usage with React</a>.</p>
+<p>The key step in server side rendering is to render the initial HTML of our component <em><strong>before</strong></em> we send it to the client side. To do this, we use <a href="https://facebook.github.io/react/docs/react-dom-server.html#rendertostring" target="_blank">ReactDOMServer.renderToString()</a>.</p>
+<p>We then get the initial <a href="../Glossary.html#state" class="glossary-term" title="">state</a> from our Redux <a href="../Glossary.html#store" class="glossary-term" title="">store</a> using <a href="../api/Store.html#getState"><code>store.getState()</code></a>. We will see how this is passed along in our <code>renderFullPage</code> function.</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> { renderToString } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-dom/server&apos;</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handleRender</span>(<span class="hljs-params">req, res</span>) </span>{
+  <span class="hljs-comment">// Create a new Redux store instance</span>
+  <span class="hljs-keyword">const</span> store = createStore(counterApp)
+
+  <span class="hljs-comment">// Render the component to a string</span>
+  <span class="hljs-keyword">const</span> html = renderToString(
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Provider</span> <span class="hljs-attr">store</span>=<span class="hljs-string">{store}</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">App</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Provider</span>&gt;</span>
+  )
+
+  // Grab the initial state from our Redux store
+  const preloadedState = store.getState()
+
+  // Send the rendered page back to the client
+  res.send(renderFullPage(html, preloadedState))
+}
+</span></code></pre>
+<h3 id="inject-initial-component-html-and-state">Inject Initial Component HTML and State</h3>
+<p>The final step on the server side is to inject our initial component HTML and initial <a href="../Glossary.html#state" class="glossary-term" title="">state</a> into a template to be rendered on the client side. To pass along the <a href="../Glossary.html#state" class="glossary-term" title="">state</a>, we add a <code>&lt;script&gt;</code> tag that will attach <code>preloadedState</code> to <code>window.__PRELOADED_STATE__</code>.</p>
+<p>The <code>preloadedState</code> will then be available on the client side by accessing <code>window.__PRELOADED_STATE__</code>.</p>
+<p>We also include our bundle file for the client-side application via a script tag. This is whatever output your bundling tool provides for your client entry point. It may be a static file or a URL to a hot reloading development server.</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">renderFullPage</span>(<span class="hljs-params">html, preloadedState</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-string">`
+    &lt;!doctype html&gt;
+    &lt;html&gt;
+      &lt;head&gt;
+        &lt;title&gt;Redux Universal Example&lt;/title&gt;
+      &lt;/head&gt;
+      &lt;body&gt;
+        &lt;div id=&quot;root&quot;&gt;<span class="hljs-subst">${html}</span>&lt;/div&gt;
+        &lt;script&gt;
+          // WARNING: See the following for security issues around embedding JSON in HTML:
+          // http://redux.js.org/docs/recipes/ServerRendering.html#security-considerations
+          window.__PRELOADED_STATE__ = <span class="hljs-subst">${JSON.stringify(preloadedState).replace(/&lt;/g, &apos;\\u003c&apos;)}</span>
+        &lt;/script&gt;
+        &lt;script src=&quot;/static/bundle.js&quot;&gt;&lt;/script&gt;
+      &lt;/body&gt;
+    &lt;/html&gt;
+    `</span>
+}
+</code></pre>
+<h2 id="the-client-side">The Client Side</h2>
+<p>The client side is very straightforward. All we need to do is grab the initial <a href="../Glossary.html#state" class="glossary-term" title="">state</a> from <code>window.__PRELOADED_STATE__</code>, and pass it to our <a href="../api/createStore.html"><code>createStore()</code></a> function as the initial <a href="../Glossary.html#state" class="glossary-term" title="">state</a>.</p>
+<p>Let&apos;s take a look at our new client file:</p>
+<h4 id="clientjs"><code>client.js</code></h4>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>
+<span class="hljs-keyword">import</span> { render } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-dom&apos;</span>
+<span class="hljs-keyword">import</span> { createStore } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;redux&apos;</span>
+<span class="hljs-keyword">import</span> { Provider } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-redux&apos;</span>
+<span class="hljs-keyword">import</span> App <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./containers/App&apos;</span>
+<span class="hljs-keyword">import</span> counterApp <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./reducers&apos;</span>
+
+<span class="hljs-comment">// Grab the state from a global variable injected into the server-generated HTML</span>
+<span class="hljs-keyword">const</span> preloadedState = <span class="hljs-built_in">window</span>.__PRELOADED_STATE__
+
+<span class="hljs-comment">// Allow the passed state to be garbage-collected</span>
+<span class="hljs-keyword">delete</span> <span class="hljs-built_in">window</span>.__PRELOADED_STATE__
+
+<span class="hljs-comment">// Create Redux store with initial state</span>
+<span class="hljs-keyword">const</span> store = createStore(counterApp, preloadedState)
+
+render(
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Provider</span> <span class="hljs-attr">store</span>=<span class="hljs-string">{store}</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">App</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">Provider</span>&gt;</span>,
+  document.getElementById(&apos;root&apos;)
+)
+</span></code></pre>
+<p>You can set up your build tool of choice (Webpack, Browserify, etc.) to compile a bundle file into <code>static/bundle.js</code>.</p>
+<p>When the page loads, the bundle file will be started up and <a href="https://facebook.github.io/react/docs/top-level-api.html#reactdom.render" target="_blank"><code>ReactDOM.render()</code></a> will hook into the <code>data-react-id</code> attributes from the server-rendered HTML. This will connect our newly-started React instance to the virtual DOM used on the server. Since we have the same initial <a href="../Glossary.html#state" class="glossary-term" title="">state</a> for our Redux <a href="../Glossary.html#store" class="glossary-term" title="">store</a> and used the same code for all our view components, the result will be the same real DOM.</p>
+<p>And that&apos;s it! That is all we need to do to implement server side rendering.</p>
+<p>But the result is pretty vanilla. It essentially renders a static view from dynamic code. What we need to do next is build an initial <a href="../Glossary.html#state" class="glossary-term" title="">state</a> dynamically to allow that rendered view to be dynamic.</p>
+<h2 id="preparing-the-initial-state">Preparing the Initial State</h2>
+<p>Because the client side executes ongoing code, it can start with an empty initial <a href="../Glossary.html#state" class="glossary-term" title="">state</a> and obtain any necessary <a href="../Glossary.html#state" class="glossary-term" title="">state</a> on demand and over time. On the server side, rendering is synchronous and we only get one shot to render our view. We need to be able to compile our initial <a href="../Glossary.html#state" class="glossary-term" title="">state</a> during the request, which will have to react to input and obtain external <a href="../Glossary.html#state" class="glossary-term" title="">state</a> (such as that from an API or database).</p>
+<h3 id="processing-request-parameters">Processing Request Parameters</h3>
+<p>The only input for server side code is the request made when loading up a page in your app in your browser. You may choose to configure the server during its boot (such as when you are running in a development vs. production environment), but that configuration is static.</p>
+<p>The request contains information about the URL requested, including any query parameters, which will be useful when using something like <a href="https://github.com/reactjs/react-router" target="_blank">React Router</a>. It can also contain headers with inputs like cookies or authorization, or POST body data. Let&apos;s see how we can set the initial counter <a href="../Glossary.html#state" class="glossary-term" title="">state</a> based on a query parameter.</p>
+<h4 id="serverjs"><code>server.js</code></h4>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> qs <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;qs&apos;</span> <span class="hljs-comment">// Add this at the top of the file</span>
+<span class="hljs-keyword">import</span> { renderToString } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-dom/server&apos;</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handleRender</span>(<span class="hljs-params">req, res</span>) </span>{
+  <span class="hljs-comment">// Read the counter from the request, if provided</span>
+  <span class="hljs-keyword">const</span> params = qs.parse(req.query)
+  <span class="hljs-keyword">const</span> counter = <span class="hljs-built_in">parseInt</span>(params.counter, <span class="hljs-number">10</span>) || <span class="hljs-number">0</span>
+
+  <span class="hljs-comment">// Compile an initial state</span>
+  <span class="hljs-keyword">let</span> preloadedState = { counter }
+
+  <span class="hljs-comment">// Create a new Redux store instance</span>
+  <span class="hljs-keyword">const</span> store = createStore(counterApp, preloadedState)
+
+  <span class="hljs-comment">// Render the component to a string</span>
+  <span class="hljs-keyword">const</span> html = renderToString(
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Provider</span> <span class="hljs-attr">store</span>=<span class="hljs-string">{store}</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">App</span> /&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">Provider</span>&gt;</span>
+  )
+
+  // Grab the initial state from our Redux store
+  const finalState = store.getState()
+
+  // Send the rendered page back to the client
+  res.send(renderFullPage(html, finalState))
+}
+</span></code></pre>
+<p>The code reads from the Express <code>Request</code> object passed into our server <a href="../Glossary.html#middleware" class="glossary-term" title="">middleware</a>. The parameter is parsed into a number and then set in the initial <a href="../Glossary.html#state" class="glossary-term" title="">state</a>. If you visit <a href="http://localhost:3000/?counter=100" target="_blank">http://localhost:3000/?counter=100</a> in your browser, you&apos;ll see the counter starts at 100. In the rendered HTML, you&apos;ll see the counter output as 100 and the <code>__PRELOADED_STATE__</code> variable has the counter set in it.</p>
+<h3 id="async-state-fetching">Async State Fetching</h3>
+<p>The most common issue with server side rendering is dealing with <a href="../Glossary.html#state" class="glossary-term" title="">state</a> that comes in asynchronously. Rendering on the server is synchronous by nature, so it&apos;s necessary to map any asynchronous fetches into a synchronous operation.</p>
+<p>The easiest way to do this is to pass through some callback back to your synchronous code. In this case, that will be a function that will reference the response object and send back our rendered HTML to the client. Don&apos;t worry, it&apos;s not as hard as it may sound.</p>
+<p>For our example, we&apos;ll imagine there is an external datastore that contains the counter&apos;s initial value (Counter As A Service, or CaaS). We&apos;ll make a mock call over to them and build our initial <a href="../Glossary.html#state" class="glossary-term" title="">state</a> from the result. We&apos;ll start by building out our API call:</p>
+<h4 id="apicounterjs"><code>api/counter.js</code></h4>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getRandomInt</span>(<span class="hljs-params">min, max</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * (max - min)) + min
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fetchCounter</span>(<span class="hljs-params">callback</span>) </span>{
+  setTimeout(() =&gt; {
+    callback(getRandomInt(<span class="hljs-number">1</span>, <span class="hljs-number">100</span>))
+  }, <span class="hljs-number">500</span>)
+}
+</code></pre>
+<p>Again, this is just a mock API, so we use <code>setTimeout</code> to simulate a network request that takes 500 milliseconds to respond (this should be much faster with a real world API). We pass in a callback that returns a random number asynchronously. If you&apos;re using a Promise-based API client, then you would issue this callback in your <code>then</code> handler.</p>
+<p>On the server side, we simply wrap our existing code in the <code>fetchCounter</code> and receive the result in the callback:</p>
+<h4 id="serverjs"><code>server.js</code></h4>
+<pre><code class="lang-js"><span class="hljs-comment">// Add this to our imports</span>
+<span class="hljs-keyword">import</span> { fetchCounter } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;./api/counter&apos;</span>
+<span class="hljs-keyword">import</span> { renderToString } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react-dom/server&apos;</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">handleRender</span>(<span class="hljs-params">req, res</span>) </span>{
+  <span class="hljs-comment">// Query our mock API asynchronously</span>
+  fetchCounter(apiResult =&gt; {
+    <span class="hljs-comment">// Read the counter from the request, if provided</span>
+    <span class="hljs-keyword">const</span> params = qs.parse(req.query)
+    <span class="hljs-keyword">const</span> counter = <span class="hljs-built_in">parseInt</span>(params.counter, <span class="hljs-number">10</span>) || apiResult || <span class="hljs-number">0</span>
+
+    <span class="hljs-comment">// Compile an initial state</span>
+    <span class="hljs-keyword">let</span> preloadedState = { counter }
+
+    <span class="hljs-comment">// Create a new Redux store instance</span>
+    <span class="hljs-keyword">const</span> store = createStore(counterApp, preloadedState)
+
+    <span class="hljs-comment">// Render the component to a string</span>
+    <span class="hljs-keyword">const</span> html = renderToString(
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Provider</span> <span class="hljs-attr">store</span>=<span class="hljs-string">{store}</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">App</span> /&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">Provider</span>&gt;</span>
+    )
+
+    // Grab the initial state from our Redux store
+    const finalState = store.getState()
+
+    // Send the rendered page back to the client
+    res.send(renderFullPage(html, finalState))
+  })
+}
+</span></code></pre>
+<p>Because we call <code>res.send()</code> inside of the callback, the server will hold open the connection and won&apos;t send any data until that callback executes. You&apos;ll notice a 500ms delay is now added to each server request as a result of our new API call. A more advanced usage would handle errors in the API gracefully, such as a bad response or timeout.</p>
+<h3 id="security-considerations">Security Considerations</h3>
+<p>Because we have introduced more code that relies on user generated content (UGC) and input, we have increased our attack surface area for our application. It is important for any application that you ensure your input is properly sanitized to prevent things like cross-site scripting (XSS) attacks or code injections.</p>
+<p>In our example, we take a rudimentary approach to security. When we obtain the parameters from the request, we use <code>parseInt</code> on the <code>counter</code> parameter to ensure this value is a number. If we did not do this, you could easily get dangerous data into the rendered HTML by providing a script tag in the request. That might look like this: <code>?counter=&lt;/script&gt;&lt;script&gt;doSomethingBad();&lt;/script&gt;</code></p>
+<p>For our simplistic example, coercing our input into a number is sufficiently secure. If you&apos;re handling more complex input, such as freeform text, then you should run that input through an appropriate sanitization function, such as <a href="https://www.npmjs.com/package/validator" target="_blank">validator.js</a>.</p>
+<p>Furthermore, you can add additional layers of security by sanitizing your <a href="../Glossary.html#state" class="glossary-term" title="">state</a> output. <code>JSON.stringify</code> can be subject to script injections. To counter this, you can scrub the JSON string of HTML tags and other dangerous characters. This can be done with either a simple text replacement on the string, e.g. <code>JSON.stringify(state).replace(/&lt;/g, &apos;\\u003c&apos;)</code>, or via more sophisticated libraries such as <a href="https://github.com/yahoo/serialize-javascript" target="_blank">serialize-javascript</a>.</p>
+<h2 id="next-steps">Next Steps</h2>
+<p>You may want to read <a href="../advanced/AsyncActions.html">Async Actions</a> to learn more about expressing asynchronous flow in Redux with async primitives such as Promises and thunks. Keep in mind that anything you learn there can also be applied to universal rendering.</p>
+<p>If you use something like <a href="https://github.com/reactjs/react-router" target="_blank">React Router</a>, you might also want to express your data fetching dependencies as static <code>fetchData()</code> methods on your route handler components. They may return <a href="../advanced/AsyncActions.html">async actions</a>, so that your <code>handleRender</code> function can match the route to the route handler component classes, dispatch <code>fetchData()</code> result for each of them, and render only after the Promises have resolved. This way the specific API calls required for different routes are colocated with the route handler component definitions. You can also use the same technique on the client side to prevent the router from switching the page until its data has been loaded.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="ReducingBoilerplate.html" class="navigation navigation-prev " aria-label="Previous page: Reducing Boilerplate">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="WritingTests.html" class="navigation navigation-next " aria-label="Next page: Writing Tests">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Server Rendering","level":"1.5.4","depth":2,"next":{"title":"Writing Tests","level":"1.5.5","depth":2,"path":"recipes/WritingTests.md","ref":"./recipes/WritingTests.md","articles":[]},"previous":{"title":"Reducing Boilerplate","level":"1.5.3","depth":2,"path":"recipes/ReducingBoilerplate.md","ref":"./recipes/ReducingBoilerplate.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"recipes/ServerRendering.md","mtime":"2017-03-13T14:28:11.351Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-15T14:47:19.389Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

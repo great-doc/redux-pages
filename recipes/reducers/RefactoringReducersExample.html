@@ -1,0 +1,1494 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Refactoring Reducers Example · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.2">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="UsingCombineReducers.html" />
+    
+    
+    <link rel="prev" href="SplittingReducerLogic.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Read Me
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../introduction/">
+            
+                <a href="../../introduction/">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../introduction/Motivation.html">
+            
+                <a href="../../introduction/Motivation.html">
+            
+                    
+                    Motivation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../introduction/CoreConcepts.html">
+            
+                <a href="../../introduction/CoreConcepts.html">
+            
+                    
+                    Core Concepts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../../introduction/ThreePrinciples.html">
+            
+                <a href="../../introduction/ThreePrinciples.html">
+            
+                    
+                    Three Principles
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../../introduction/PriorArt.html">
+            
+                <a href="../../introduction/PriorArt.html">
+            
+                    
+                    Prior Art
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../../introduction/Ecosystem.html">
+            
+                <a href="../../introduction/Ecosystem.html">
+            
+                    
+                    Ecosystem
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../../introduction/Examples.html">
+            
+                <a href="../../introduction/Examples.html">
+            
+                    
+                    Examples
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../../basics/">
+            
+                <a href="../../basics/">
+            
+                    
+                    Basics
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../../basics/Actions.html">
+            
+                <a href="../../basics/Actions.html">
+            
+                    
+                    Actions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../../basics/Reducers.html">
+            
+                <a href="../../basics/Reducers.html">
+            
+                    
+                    Reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../../basics/Store.html">
+            
+                <a href="../../basics/Store.html">
+            
+                    
+                    Store
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../../basics/DataFlow.html">
+            
+                <a href="../../basics/DataFlow.html">
+            
+                    
+                    Data Flow
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../../basics/UsageWithReact.html">
+            
+                <a href="../../basics/UsageWithReact.html">
+            
+                    
+                    Usage with React
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../../basics/ExampleTodoList.html">
+            
+                <a href="../../basics/ExampleTodoList.html">
+            
+                    
+                    Example: Todo List
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../advanced/">
+            
+                <a href="../../advanced/">
+            
+                    
+                    Advanced
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../../advanced/AsyncActions.html">
+            
+                <a href="../../advanced/AsyncActions.html">
+            
+                    
+                    Async Actions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../../advanced/AsyncFlow.html">
+            
+                <a href="../../advanced/AsyncFlow.html">
+            
+                    
+                    Async Flow
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../../advanced/Middleware.html">
+            
+                <a href="../../advanced/Middleware.html">
+            
+                    
+                    Middleware
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../../advanced/UsageWithReactRouter.html">
+            
+                <a href="../../advanced/UsageWithReactRouter.html">
+            
+                    
+                    Usage with React Router
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../../advanced/ExampleRedditAPI.html">
+            
+                <a href="../../advanced/ExampleRedditAPI.html">
+            
+                    
+                    Example: Reddit API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" >
+            
+                <span>
+            
+                    
+                    Next Steps
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Recipes
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../MigratingToRedux.html">
+            
+                <a href="../MigratingToRedux.html">
+            
+                    
+                    Migrating to Redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../UsingObjectSpreadOperator.html">
+            
+                <a href="../UsingObjectSpreadOperator.html">
+            
+                    
+                    Using Object Spread Operator
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../ReducingBoilerplate.html">
+            
+                <a href="../ReducingBoilerplate.html">
+            
+                    
+                    Reducing Boilerplate
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../ServerRendering.html">
+            
+                <a href="../ServerRendering.html">
+            
+                    
+                    Server Rendering
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../WritingTests.html">
+            
+                <a href="../WritingTests.html">
+            
+                    
+                    Writing Tests
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="../ComputingDerivedData.html">
+            
+                <a href="../ComputingDerivedData.html">
+            
+                    
+                    Computing Derived Data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="../ImplementingUndoHistory.html">
+            
+                <a href="../ImplementingUndoHistory.html">
+            
+                    
+                    Implementing Undo History
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="../IsolatingSubapps.html">
+            
+                <a href="../IsolatingSubapps.html">
+            
+                    
+                    Isolating Subapps
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="../StructuringReducers.html">
+            
+                <a href="../StructuringReducers.html">
+            
+                    
+                    Structuring Reducers
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.9.1" data-path="PrerequisiteConcepts.html">
+            
+                <a href="PrerequisiteConcepts.html">
+            
+                    
+                    Prerequisite Concepts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.2" data-path="BasicReducerStructure.html">
+            
+                <a href="BasicReducerStructure.html">
+            
+                    
+                    Basic Reducer Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.3" data-path="SplittingReducerLogic.html">
+            
+                <a href="SplittingReducerLogic.html">
+            
+                    
+                    Splitting Reducer Logic
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.9.4" data-path="RefactoringReducersExample.html">
+            
+                <a href="RefactoringReducersExample.html">
+            
+                    
+                    Refactoring Reducers Example
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.5" data-path="UsingCombineReducers.html">
+            
+                <a href="UsingCombineReducers.html">
+            
+                    
+                    Using combineReducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.6" data-path="BeyondCombineReducers.html">
+            
+                <a href="BeyondCombineReducers.html">
+            
+                    
+                    Beyond combineReducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.7" data-path="NormalizingStateShape.html">
+            
+                <a href="NormalizingStateShape.html">
+            
+                    
+                    Normalizing State Shape
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.8" data-path="UpdatingNormalizedData.html">
+            
+                <a href="UpdatingNormalizedData.html">
+            
+                    
+                    Updating Normalized Data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.9" data-path="ReusingReducerLogic.html">
+            
+                <a href="ReusingReducerLogic.html">
+            
+                    
+                    Reusing Reducer Logic
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.10" data-path="ImmutableUpdatePatterns.html">
+            
+                <a href="ImmutableUpdatePatterns.html">
+            
+                    
+                    Immutable Update Patterns
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9.11" data-path="InitializingState.html">
+            
+                <a href="InitializingState.html">
+            
+                    
+                    Initializing State
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.10" data-path="../UsingImmutableJS.html">
+            
+                <a href="../UsingImmutableJS.html">
+            
+                    
+                    Using Immutable.JS with Redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../../FAQ.html">
+            
+                <a href="../../FAQ.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../../faq/General.html">
+            
+                <a href="../../faq/General.html">
+            
+                    
+                    General
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../../faq/Reducers.html">
+            
+                <a href="../../faq/Reducers.html">
+            
+                    
+                    Reducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../../faq/OrganizingState.html">
+            
+                <a href="../../faq/OrganizingState.html">
+            
+                    
+                    Organizing State
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../../faq/StoreSetup.html">
+            
+                <a href="../../faq/StoreSetup.html">
+            
+                    
+                    Store Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../../faq/Actions.html">
+            
+                <a href="../../faq/Actions.html">
+            
+                    
+                    Actions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../../faq/ImmutableData.html">
+            
+                <a href="../../faq/ImmutableData.html">
+            
+                    
+                    Immutable Data
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../../faq/CodeStructure.html">
+            
+                <a href="../../faq/CodeStructure.html">
+            
+                    
+                    Code Structure
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../../faq/Performance.html">
+            
+                <a href="../../faq/Performance.html">
+            
+                    
+                    Performance
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../../faq/ReactRedux.html">
+            
+                <a href="../../faq/ReactRedux.html">
+            
+                    
+                    React Redux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="../../faq/Miscellaneous.html">
+            
+                <a href="../../faq/Miscellaneous.html">
+            
+                    
+                    Miscellaneous
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../../Troubleshooting.html">
+            
+                <a href="../../Troubleshooting.html">
+            
+                    
+                    Troubleshooting
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../../Glossary.html">
+            
+                <a href="../../Glossary.html">
+            
+                    
+                    Glossary
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../../api/">
+            
+                <a href="../../api/">
+            
+                    
+                    API Reference
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../../api/createStore.html">
+            
+                <a href="../../api/createStore.html">
+            
+                    
+                    createStore
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../../api/Store.html">
+            
+                <a href="../../api/Store.html">
+            
+                    
+                    Store
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../../api/combineReducers.html">
+            
+                <a href="../../api/combineReducers.html">
+            
+                    
+                    combineReducers
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../../api/applyMiddleware.html">
+            
+                <a href="../../api/applyMiddleware.html">
+            
+                    
+                    applyMiddleware
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../../api/bindActionCreators.html">
+            
+                <a href="../../api/bindActionCreators.html">
+            
+                    
+                    bindActionCreators
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="../../api/compose.html">
+            
+                <a href="../../api/compose.html">
+            
+                    
+                    compose
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../../CHANGELOG.md">
+            
+                <span>
+            
+                    
+                    Change Log
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../../PATRONS.md">
+            
+                <span>
+            
+                    
+                    Patrons
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../../Feedback.html">
+            
+                <a href="../../Feedback.html">
+            
+                    
+                    Feedback
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Refactoring Reducers Example</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="refactoring-reducer-logic-using-functional-decomposition-and-reducer-composition">Refactoring Reducer Logic Using Functional Decomposition and Reducer Composition</h1>
+<p>It may be helpful to see examples of what the different types of sub-<a href="../../Glossary.html#reducer" class="glossary-term" title="">reducer</a> functions look like and how they fit together.  Let&apos;s look at a demonstration of how a large single <a href="../../Glossary.html#reducer" class="glossary-term" title="">reducer</a> function can be refactored into a composition of several smaller functions.</p>
+<blockquote>
+<p><strong>Note</strong>: this example is deliberately written in a verbose style in order to illustrate the concepts and the process of refactoring, rather than perfectly concise code.</p>
+</blockquote>
+<h4 id="initial-reducer">Initial Reducer</h4>
+<p>Let&apos;s say that our initial <a href="../../Glossary.html#reducer" class="glossary-term" title="">reducer</a> looks like this:</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> initialState = {
+    visibilityFilter : <span class="hljs-string">&apos;SHOW_ALL&apos;</span>,
+    todos : []
+};
+
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">appReducer</span>(<span class="hljs-params">state = initialState, action</span>) </span>{
+    <span class="hljs-keyword">switch</span>(action.type) {
+        <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;SET_VISIBILITY_FILTER&apos;</span> : { 
+            <span class="hljs-keyword">return</span> <span class="hljs-built_in">Object</span>.assign({}, state, {
+                visibilityFilter : action.filter
+            });
+        }
+        <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;ADD_TODO&apos;</span> : {
+            <span class="hljs-keyword">return</span> <span class="hljs-built_in">Object</span>.assign({}, state, {
+                todos : state.todos.concat({
+                    id: action.id,
+                    text: action.text,
+                    completed: <span class="hljs-literal">false</span>
+                })
+            });
+        }
+        <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;TOGGLE_TODO&apos;</span> : {
+            <span class="hljs-keyword">return</span> <span class="hljs-built_in">Object</span>.assign({}, state, {
+                todos : state.todos.map(todo =&gt; {
+                    <span class="hljs-keyword">if</span> (todo.id !== action.id) {
+                      <span class="hljs-keyword">return</span> todo;
+                    }
+
+                    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Object</span>.assign({}, todo, {
+                        completed : !todo.completed
+                    })
+                  })
+            });
+        } 
+        <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;EDIT_TODO&apos;</span> : {
+            <span class="hljs-keyword">return</span> <span class="hljs-built_in">Object</span>.assign({}, state, {
+                todos : state.todos.map(todo =&gt; {
+                    <span class="hljs-keyword">if</span> (todo.id !== action.id) {
+                      <span class="hljs-keyword">return</span> todo;
+                    }
+
+                    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Object</span>.assign({}, todo, {
+                        text : action.text
+                    })
+                  })
+            });
+        } 
+        <span class="hljs-keyword">default</span> : <span class="hljs-keyword">return</span> state;
+    }
+}
+</code></pre>
+<p>That function is fairly short, but already becoming overly complex.  We&apos;re dealing with two different areas of concern (filtering vs managing our list of todos), the nesting is making the update logic harder to read, and it&apos;s not exactly clear what&apos;s going on everywhere.</p>
+<h4 id="extracting-utility-functions">Extracting Utility Functions</h4>
+<p>A good first step might be to break out a utility function to return a new object with updated fields.  There&apos;s also a repeated pattern with trying to update a specific item in an array that we could extract to a function: </p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">updateObject</span>(<span class="hljs-params">oldObject, newValues</span>) </span>{
+    <span class="hljs-comment">// Encapsulate the idea of passing a new object as the first parameter</span>
+    <span class="hljs-comment">// to Object.assign to ensure we correctly copy data instead of mutating</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Object</span>.assign({}, oldObject, newValues);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">updateItemInArray</span>(<span class="hljs-params">array, itemId, updateItemCallback</span>) </span>{
+    <span class="hljs-keyword">const</span> updatedItems = array.map(item =&gt; {
+        <span class="hljs-keyword">if</span>(item.id !== itemId) {
+            <span class="hljs-comment">// Since we only want to update one item, preserve all others as they are now</span>
+            <span class="hljs-keyword">return</span> item;
+        }
+
+        <span class="hljs-comment">// Use the provided callback to create an updated item</span>
+        <span class="hljs-keyword">const</span> updatedItem = updateItemCallback(item);
+        <span class="hljs-keyword">return</span> updatedItem;
+    });
+
+    <span class="hljs-keyword">return</span> updatedItems;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">appReducer</span>(<span class="hljs-params">state = initialState, action</span>) </span>{
+    <span class="hljs-keyword">switch</span>(action.type) {
+        <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;SET_VISIBILITY_FILTER&apos;</span> : { 
+            <span class="hljs-keyword">return</span> updateObject(state, {visibilityFilter : action.filter});
+        }
+        <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;ADD_TODO&apos;</span> : {
+            <span class="hljs-keyword">const</span> newTodos = state.todos.concat({
+                id: action.id,
+                text: action.text,
+                completed: <span class="hljs-literal">false</span>
+            });
+
+            <span class="hljs-keyword">return</span> updateObject(state, {todos : newTodos});
+        }
+        <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;TOGGLE_TODO&apos;</span> : {
+            <span class="hljs-keyword">const</span> newTodos = updateItemInArray(state.todos, action.id, todo =&gt; {
+                <span class="hljs-keyword">return</span> updateObject(todo, {completed : !todo.completed});
+            });
+
+            <span class="hljs-keyword">return</span> updateObject(state, {todos : newTodos});
+        } 
+        <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;EDIT_TODO&apos;</span> : {
+            <span class="hljs-keyword">const</span> newTodos = updateItemInArray(state.todos, action.id, todo =&gt; {
+                <span class="hljs-keyword">return</span> updateObject(todo, {text : action.text});
+            });
+
+            <span class="hljs-keyword">return</span> updateObject(state, {todos : newTodos});
+        } 
+        <span class="hljs-keyword">default</span> : <span class="hljs-keyword">return</span> state;
+    }
+}
+</code></pre>
+<p>That reduced the duplication and made things a bit easier to read.</p>
+<h4 id="extracting-case-reducers">Extracting Case Reducers</h4>
+<p>Next, we can split each specific case into its own function:</p>
+<pre><code class="lang-js"><span class="hljs-comment">// Omitted</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">updateObject</span>(<span class="hljs-params">oldObject, newValues</span>) </span>{}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">updateItemInArray</span>(<span class="hljs-params">array, itemId, updateItemCallback</span>) </span>{}
+
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setVisibilityFilter</span>(<span class="hljs-params">state, action</span>) </span>{
+    <span class="hljs-keyword">return</span> updateObject(state, {visibilityFilter : action.filter });
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addTodo</span>(<span class="hljs-params">state, action</span>) </span>{
+    <span class="hljs-keyword">const</span> newTodos = state.todos.concat({
+        id: action.id,
+        text: action.text,
+        completed: <span class="hljs-literal">false</span>
+    });
+
+    <span class="hljs-keyword">return</span> updateObject(state, {todos : newTodos});
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">toggleTodo</span>(<span class="hljs-params">state, action</span>) </span>{
+    <span class="hljs-keyword">const</span> newTodos = updateItemInArray(state.todos, action.id, todo =&gt; {
+        <span class="hljs-keyword">return</span> updateObject(todo, {completed : !todo.completed});
+    });
+
+    <span class="hljs-keyword">return</span> updateObject(state, {todos : newTodos});
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">editTodo</span>(<span class="hljs-params">state, action</span>) </span>{
+    <span class="hljs-keyword">const</span> newTodos = updateItemInArray(state.todos, action.id, todo =&gt; {
+        <span class="hljs-keyword">return</span> updateObject(todo, {text : action.text});
+    });
+
+    <span class="hljs-keyword">return</span> updateObject(state, {todos : newTodos});
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">appReducer</span>(<span class="hljs-params">state = initialState, action</span>) </span>{
+    <span class="hljs-keyword">switch</span>(action.type) {
+        <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;SET_VISIBILITY_FILTER&apos;</span> : <span class="hljs-keyword">return</span> setVisibilityFilter(state, action);
+        <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;ADD_TODO&apos;</span> : <span class="hljs-keyword">return</span> addTodo(state, action);
+        <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;TOGGLE_TODO&apos;</span> : <span class="hljs-keyword">return</span> toggleTodo(state, action);
+        <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;EDIT_TODO&apos;</span> : <span class="hljs-keyword">return</span> editTodo(state, action);
+        <span class="hljs-keyword">default</span> : <span class="hljs-keyword">return</span> state;
+    }
+}
+</code></pre>
+<p>Now it&apos;s <em>very</em> clear what&apos;s happening in each case.  We can also start to see some patterns emerging.  </p>
+<h4 id="separating-data-handling-by-domain">Separating Data Handling by Domain</h4>
+<p>Our app <a href="../../Glossary.html#reducer" class="glossary-term" title="">reducer</a> is still aware of all the different cases for our application.  Let&apos;s try splitting things up so that the filter logic and the todo logic are separated:</p>
+<pre><code class="lang-js"><span class="hljs-comment">// Omitted</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">updateObject</span>(<span class="hljs-params">oldObject, newValues</span>) </span>{}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">updateItemInArray</span>(<span class="hljs-params">array, itemId, updateItemCallback</span>) </span>{}
+
+
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setVisibilityFilter</span>(<span class="hljs-params">visibilityState, action</span>) </span>{
+    <span class="hljs-comment">// Technically, we don&apos;t even care about the previous state</span>
+    <span class="hljs-keyword">return</span> action.filter;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">visibilityReducer</span>(<span class="hljs-params">visibilityState = &apos;SHOW_ALL&apos;, action</span>) </span>{
+    <span class="hljs-keyword">switch</span>(action.type) {
+        <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;SET_VISIBILITY_FILTER&apos;</span> : <span class="hljs-keyword">return</span> setVisibilityFilter(visibilityState, action);
+        <span class="hljs-keyword">default</span> : <span class="hljs-keyword">return</span> visibilityState;
+    }
+};
+
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addTodo</span>(<span class="hljs-params">todosState, action</span>) </span>{
+    <span class="hljs-keyword">const</span> newTodos = todosState.concat({
+        id: action.id,
+        text: action.text,
+        completed: <span class="hljs-literal">false</span>
+    });
+
+    <span class="hljs-keyword">return</span> newTodos;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">toggleTodo</span>(<span class="hljs-params">todosState, action</span>) </span>{
+    <span class="hljs-keyword">const</span> newTodos = updateItemInArray(todosState, action.id, todo =&gt; {
+        <span class="hljs-keyword">return</span> updateObject(todo, {completed : !todo.completed});
+    });
+
+    <span class="hljs-keyword">return</span> newTodos;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">editTodo</span>(<span class="hljs-params">todosState, action</span>) </span>{
+    <span class="hljs-keyword">const</span> newTodos = updateItemInArray(todosState, action.id, todo =&gt; {
+        <span class="hljs-keyword">return</span> updateObject(todo, {text : action.text});
+    });
+
+    <span class="hljs-keyword">return</span> newTodos;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">todosReducer</span>(<span class="hljs-params">todosState = [], action</span>) </span>{
+    <span class="hljs-keyword">switch</span>(action.type) {
+        <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;ADD_TODO&apos;</span> : <span class="hljs-keyword">return</span> addTodo(todosState, action);
+        <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;TOGGLE_TODO&apos;</span> : <span class="hljs-keyword">return</span> toggleTodo(todosState, action);
+        <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;EDIT_TODO&apos;</span> : <span class="hljs-keyword">return</span> editTodo(todosState, action);
+        <span class="hljs-keyword">default</span> : <span class="hljs-keyword">return</span> todosState;
+    }
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">appReducer</span>(<span class="hljs-params">state = initialState, action</span>) </span>{
+    <span class="hljs-keyword">return</span> {
+        todos : todosReducer(state.todos, action),
+        visibilityFilter : visibilityReducer(state.visibilityFilter, action)
+    };
+}
+</code></pre>
+<p>Notice that because the two &quot;slice of <a href="../../Glossary.html#state" class="glossary-term" title="">state</a>&quot; reducers are now getting only their own part of the whole <a href="../../Glossary.html#state" class="glossary-term" title="">state</a> as arguments, they no longer need to return complex nested <a href="../../Glossary.html#state" class="glossary-term" title="">state</a> objects, and are now simpler as a result.</p>
+<h4 id="reducing-boilerplate">Reducing Boilerplate</h4>
+<p>We&apos;re almost done.  Since many people don&apos;t like switch statements, it&apos;s very common to use a function that creates a lookup table of <a href="../../Glossary.html#action" class="glossary-term" title="">action</a> types to case functions.  We&apos;ll use the <code>createReducer</code> function described in <a href="../ReducingBoilerplate.html#generating-reducers">Reducing Boilerplate</a>:</p>
+<pre><code class="lang-js"><span class="hljs-comment">// Omitted</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">updateObject</span>(<span class="hljs-params">oldObject, newValues</span>) </span>{}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">updateItemInArray</span>(<span class="hljs-params">array, itemId, updateItemCallback</span>) </span>{}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createReducer</span>(<span class="hljs-params">initialState, handlers</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">reducer</span>(<span class="hljs-params">state = initialState, action</span>) </span>{
+    <span class="hljs-keyword">if</span> (handlers.hasOwnProperty(action.type)) {
+      <span class="hljs-keyword">return</span> handlers[action.type](state, action)
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-keyword">return</span> state
+    }
+  }
+}
+
+
+<span class="hljs-comment">// Omitted</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setVisibilityFilter</span>(<span class="hljs-params">visibilityState, action</span>) </span>{}
+
+<span class="hljs-keyword">const</span> visibilityReducer = createReducer(<span class="hljs-string">&apos;SHOW_ALL&apos;</span>, {
+    <span class="hljs-string">&apos;SET_VISIBILITY_FILTER&apos;</span> : setVisibilityFilter
+});
+
+<span class="hljs-comment">// Omitted</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addTodo</span>(<span class="hljs-params">todosState, action</span>) </span>{}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">toggleTodo</span>(<span class="hljs-params">todosState, action</span>) </span>{}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">editTodo</span>(<span class="hljs-params">todosState, action</span>) </span>{}
+
+<span class="hljs-keyword">const</span> todosReducer = createReducer([], {
+    <span class="hljs-string">&apos;ADD_TODO&apos;</span> : addTodo,
+    <span class="hljs-string">&apos;TOGGLE_TODO&apos;</span> : toggleTodo,
+    <span class="hljs-string">&apos;EDIT_TODO&apos;</span> : editTodo
+});
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">appReducer</span>(<span class="hljs-params">state = initialState, action</span>) </span>{
+    <span class="hljs-keyword">return</span> {
+        todos : todosReducer(state.todos, action),
+        visibilityFilter : visibilityReducer(state.visibilityFilter, action)
+    };
+}
+</code></pre>
+<h4 id="combining-reducers-by-slice">Combining Reducers by Slice</h4>
+<p>As our last step, we can now use Redux&apos;s built-in <code>combineReducers</code> utility to handle the &quot;slice-of-<a href="../../Glossary.html#state" class="glossary-term" title="">state</a>&quot; logic for our top-level app <a href="../../Glossary.html#reducer" class="glossary-term" title="">reducer</a>.  Here&apos;s the final result:</p>
+<pre><code class="lang-js"><span class="hljs-comment">// Reusable utility functions</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">updateObject</span>(<span class="hljs-params">oldObject, newValues</span>) </span>{
+    <span class="hljs-comment">// Encapsulate the idea of passing a new object as the first parameter</span>
+    <span class="hljs-comment">// to Object.assign to ensure we correctly copy data instead of mutating</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Object</span>.assign({}, oldObject, newValues);
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">updateItemInArray</span>(<span class="hljs-params">array, itemId, updateItemCallback</span>) </span>{
+    <span class="hljs-keyword">const</span> updatedItems = array.map(item =&gt; {
+        <span class="hljs-keyword">if</span>(item.id !== itemId) {
+            <span class="hljs-comment">// Since we only want to update one item, preserve all others as they are now</span>
+            <span class="hljs-keyword">return</span> item;
+        }
+
+        <span class="hljs-comment">// Use the provided callback to create an updated item</span>
+        <span class="hljs-keyword">const</span> updatedItem = updateItemCallback(item);
+        <span class="hljs-keyword">return</span> updatedItem;
+    });
+
+    <span class="hljs-keyword">return</span> updatedItems;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createReducer</span>(<span class="hljs-params">initialState, handlers</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">reducer</span>(<span class="hljs-params">state = initialState, action</span>) </span>{
+    <span class="hljs-keyword">if</span> (handlers.hasOwnProperty(action.type)) {
+      <span class="hljs-keyword">return</span> handlers[action.type](state, action)
+    } <span class="hljs-keyword">else</span> {
+      <span class="hljs-keyword">return</span> state
+    }
+  }
+}
+
+
+<span class="hljs-comment">// Handler for a specific case (&quot;case reducer&quot;)</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">setVisibilityFilter</span>(<span class="hljs-params">visibilityState, action</span>) </span>{
+    <span class="hljs-comment">// Technically, we don&apos;t even care about the previous state</span>
+    <span class="hljs-keyword">return</span> action.filter;
+}
+
+<span class="hljs-comment">// Handler for an entire slice of state (&quot;slice reducer&quot;)</span>
+<span class="hljs-keyword">const</span> visibilityReducer = createReducer(<span class="hljs-string">&apos;SHOW_ALL&apos;</span>, {
+    <span class="hljs-string">&apos;SET_VISIBILITY_FILTER&apos;</span> : setVisibilityFilter
+});
+
+<span class="hljs-comment">// Case reducer</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">addTodo</span>(<span class="hljs-params">todosState, action</span>) </span>{
+    <span class="hljs-keyword">const</span> newTodos = todosState.concat({
+        id: action.id,
+        text: action.text,
+        completed: <span class="hljs-literal">false</span>
+    });
+
+    <span class="hljs-keyword">return</span> newTodos;
+}
+
+<span class="hljs-comment">// Case reducer</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">toggleTodo</span>(<span class="hljs-params">todosState, action</span>) </span>{
+    <span class="hljs-keyword">const</span> newTodos = updateItemInArray(todosState, action.id, todo =&gt; {
+        <span class="hljs-keyword">return</span> updateObject(todo, {completed : !todo.completed});
+    });
+
+    <span class="hljs-keyword">return</span> newTodos;
+}
+
+<span class="hljs-comment">// Case reducer</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">editTodo</span>(<span class="hljs-params">todosState, action</span>) </span>{
+    <span class="hljs-keyword">const</span> newTodos = updateItemInArray(todosState, action.id, todo =&gt; {
+        <span class="hljs-keyword">return</span> updateObject(todo, {text : action.text});
+    });
+
+    <span class="hljs-keyword">return</span> newTodos;
+}
+
+<span class="hljs-comment">// Slice reducer</span>
+<span class="hljs-keyword">const</span> todosReducer = createReducer([], {
+    <span class="hljs-string">&apos;ADD_TODO&apos;</span> : addTodo,
+    <span class="hljs-string">&apos;TOGGLE_TODO&apos;</span> : toggleTodo,
+    <span class="hljs-string">&apos;EDIT_TODO&apos;</span> : editTodo
+});
+
+<span class="hljs-comment">// &quot;Root reducer&quot;</span>
+<span class="hljs-keyword">const</span> appReducer = combineReducers({
+    visibilityFilter : visibilityReducer,
+    todos : todosReducer
+});
+</code></pre>
+<p>We now have examples of several kinds of split-up <a href="../../Glossary.html#reducer" class="glossary-term" title="">reducer</a> functions:  helper utilities like <code>updateObject</code> and <code>createReducer</code>, handlers for specific cases like <code>setVisibilityFilter</code> and <code>addTodo</code>, and slice-of-<a href="../../Glossary.html#state" class="glossary-term" title="">state</a> handlers like <code>visibilityReducer</code> and <code>todosReducer</code>.  We also can see that <code>appReducer</code> is an example of a &quot;root <a href="../../Glossary.html#reducer" class="glossary-term" title="">reducer</a>&quot;.</p>
+<p>Although the final result in this example is noticeably longer than the original version, this is primarily due to the extraction of the utility functions, the addition of comments, and some deliberate verbosity for the sake of clarity, such as separate return statements.  Looking at each function individually, the amount of responsibility is now smaller, and the intent is hopefully clearer.  Also, in a real application, these functions would probably then be split into separate files such as <code>reducerUtilities.js</code>, <code>visibilityReducer.js</code>, <code>todosReducer.js</code>, and <code>rootReducer.js</code>.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="SplittingReducerLogic.html" class="navigation navigation-prev " aria-label="Previous page: Splitting Reducer Logic">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="UsingCombineReducers.html" class="navigation navigation-next " aria-label="Next page: Using combineReducers">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Refactoring Reducers Example","level":"1.5.9.4","depth":3,"next":{"title":"Using combineReducers","level":"1.5.9.5","depth":3,"path":"recipes/reducers/UsingCombineReducers.md","ref":"./recipes/reducers/UsingCombineReducers.md","articles":[]},"previous":{"title":"Splitting Reducer Logic","level":"1.5.9.3","depth":3,"path":"recipes/reducers/SplittingReducerLogic.md","ref":"./recipes/reducers/SplittingReducerLogic.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"recipes/reducers/RefactoringReducersExample.md","mtime":"2017-03-13T14:28:11.366Z","type":"markdown"},"gitbook":{"version":"3.2.2","time":"2017-03-15T14:47:19.389Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
